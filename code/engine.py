@@ -1,11 +1,11 @@
 import pickle as pk
 
 # Import processed datas from folder
-infile = open("Code/Stored Data/sample_hotel_info.pickle", "rb")
+infile = open("Stored Data/sample_hotel_info.pickle", "rb")
 hotel_info = pk.load(infile)
 infile.close()
 
-infile = open("Code/Stored Data/sample_aspect_info.pickle", "rb")
+infile = open("Stored Data/sample_aspect_info.pickle", "rb")
 aspect_info = pk.load(infile)
 infile.close()
 

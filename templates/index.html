@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <form class="col s8 offset-s2">
+            <div class="height-adjustment"></div>
+            <div class="row">
+                
+                    <div class="logo-slides logo-centering hotel"></div>
+                    <div class="logo-slides logo-centering food"></div>
+                    <div class="logo-slides logo-centering doorman"></div>
+                    <div class="logo-slides logo-centering foodtable"></div> 
+                    <div class="logo-slides logo-centering doorkey"></div>
+                    <div class="logo-slides logo-centering hotelsign"></div>
+                    <div class="logo-slides logo-centering maid"></div>
+                    <div class="logo-slides logo-centering signing"></div> 
+                    <div class="logo-slides logo-centering door"></div>
+                    <div class="logo-slides logo-centering doorbell"></div>
+                    <div class="logo-slides logo-centering waiter"></div>
+                    <div class="logo-slides logo-centering bed"></div> 
+                    <div class="logo-slides logo-centering donotdisturb"></div>
+                    <div class="logo-slides logo-centering briefcase"></div>
+                    <div class="logo-slides logo-centering reception"></div>
+                    <div class="logo-slides logo-centering television"></div> 
+                    
+            </div>
+            <div class="row">
+                <div class="input-field col s8">
+                    <input id="input-search-term" type="text" class="validate">                    
+                    <label for="input-search-term">Search Term</label>
+                </div>
+                <div class="input-field col s4">
+                        <input id="input-location" type="text" class="validate">                    
+                        <label for="input-location">Location</label>
+                </div>
+            </div>
+            <div class="row center">
+                    <a class="waves-effect waves-light btn-large">Search</a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
