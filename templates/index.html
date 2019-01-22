@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
     <div class="row">
         <div class="height-adjustment"></div>
         <div class="row">
@@ -27,13 +26,17 @@
 
         <form class="col s8 offset-s2" action="/homepage" method="POST">            
             <div class="row">
-                <div class="input-field col s8">
+                <div class="input-field col s6">                        
+                    <select class = "browser-default">
+                                <option value = "" disabled selected>Select Location</option>
+                                <option value = "1">Mango</option>
+                                <option value = "2">Orange</option>
+                                <option value = "3">Apple</option>
+                        </select>           
+                </div>
+                <div class="input-field col s6">
                     <input id="input-search-term-area" name="input-search-term" type="text" class="validate">                    
                     <label for="input-search-term-area">Search Term</label>
-                </div>
-                <div class="input-field col s4">
-                        <input id="input-location-area" name="input-location" type="text" class="validate">                    
-                        <label for="input-location-area">Location</label>
                 </div>
             </div>
             <div class="row center">
