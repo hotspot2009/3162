@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
     <div class="row">
         <div class="height-adjustment"></div>
         <div class="row">
@@ -27,15 +28,15 @@
         <form class="col s8 offset-s2" action="/homepage" method="POST">            
             <div class="row">
                 <div class="input-field col s6">                        
-                    <select class = "browser-default">
-                                <option value = "" disabled selected>Select Location</option>
-                                <option value = "1">Mango</option>
-                                <option value = "2">Orange</option>
-                                <option value = "3">Apple</option>
-                        </select>           
+                    <select name="input-location" class = "browser-default">
+                            <option value = "" disabled selected>Select Location</option>
+                            {% for key in cities.items() %}
+                            <option value = "{{ key[0] }}">{{ key[0] }}</option>
+                            {% endfor %}
+                    </select>           
                 </div>
                 <div class="input-field col s6">
-                    <input id="input-search-term-area" name="input-search-term" type="text" class="validate">                    
+                    <input id="input-search-term-area" name="input-search-term" type="text" class="validate autocomplete">                    
                     <label for="input-search-term-area">Search Term</label>
                 </div>
             </div>
@@ -46,6 +47,20 @@
             </div>
         </form>
 
-    </div>
+    </div>   
+
+    <script>
+    
+        $(document).ready(function(){
+            $('input.autocomplete').autocomplete({
+            data: {
+                {% for key in aspects.items() %}
+                    "{{ key[0].lower() }}" : null,
+                {% endfor %}
+            },
+            });
+        });
+           
+    </script>
 
 {% endblock %}
