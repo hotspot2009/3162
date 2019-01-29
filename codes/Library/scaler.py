@@ -1,7 +1,7 @@
 import random
 import math
 
-def min_max(arr):
+def min_max(arr, min_limit, max_limit):
     _min = math.inf
     _max = -math.inf
 
@@ -11,10 +11,13 @@ def min_max(arr):
 
         if arr[i] > _max:
             _max = arr[i]
+            
+    if _min == _max:
+        return [0]
 
     new_arr = []
     for i in range(len(arr)):
-        new_val = (((arr[i] - _min) / (_max - _min)) * (1 - (-1))) - 1
+        new_val = (((arr[i] - _min) / (_max - _min)) * (max_limit - (min_limit))) + min_limit
         new_arr.append(new_val)
 
     return new_arr

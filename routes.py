@@ -23,8 +23,8 @@ infile = open("codes/Stored Data/timeline_dict.pickle", "rb")
 timeline_dict = pk.load(infile)
 infile.close()
 
-infile = open("codes/Stored Data/sample_hotel_info.pickle", "rb")
-hotels_info = pk.load(infile)
+infile = open("codes/Stored Data/best_reviews_dict.pickle", "rb")
+review_dict = pk.load(infile)
 infile.close()
 
 app = Flask(__name__)
@@ -42,13 +42,17 @@ def homepage():
         input_search_term = (request.form.get("input-search-term")).lower()
         input_location = request.form.get("input-location")
         data = normalize_data(input_search_term, input_location, timeline_dict) 
-        location_data = get_location(data, hotel_dict)
-        return render_template('search.html', 
-                search_term = input_search_term, 
-                location_area = input_location,
-                timeline = data,
-                hotels = hotel_dict,
-                hotel_locations = location_data)  
+        if data == []:
+                return render_template('error.html')
+        else:
+                location_data = get_location(data, hotel_dict)
+                return render_template('search.html', 
+                        search_term = input_search_term, 
+                        location_area = input_location,
+                        timeline = data,
+                        hotels = hotel_dict,
+                        hotel_locations = location_data,
+                        best_reviews = review_dict)  
 
 if __name__ == "__main__":
     app.run(debug=True, port=1000)
