@@ -15,7 +15,7 @@
         <!-- <div>
             {{ timeline }}
         </div> -->
-
+        
         {% for hotel in timeline %}
             <div class="col s12">
                 <div class="card-panel grey lighten-5 z-depth-1" style="box-shadow:0 3px 5px #dadada;">
@@ -52,8 +52,12 @@
                             </span> -->
                         </div>
                         <div class="col s3">
-                            <div class="circle responsive-img" style="border:2px solid #000000;height: 80px; width: 80px; padding-top: 8px;text-align: center;">
-                                <h5>{{ "{:.1f}".format(hotel[0]) }}</h5>
+                            <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;margin-bottom:5px">
+                                <h5> {{ loop.index }} </h5>
+                            </div>
+                            <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;">
+                                <span>Score</span>
+                                <h5 style="line-height:0px;">{{ "{:.1f}".format(hotel[0]) }}</h5>
                             </div>
                         </div>
                     </div>
