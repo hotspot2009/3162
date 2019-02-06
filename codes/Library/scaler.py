@@ -13,7 +13,7 @@ def min_max(arr, min_limit, max_limit):
             _max = arr[i]
             
     if _min == _max:
-        return [0]
+        return [(min_limit+max_limit)/2] * len(arr)
 
     new_arr = []
     for i in range(len(arr)):
