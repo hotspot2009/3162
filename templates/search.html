@@ -18,7 +18,7 @@
         
         {% for hotel in timeline %}
             <div class="col s12">
-                <div class="card-panel grey lighten-5 z-depth-1" style="box-shadow:0 3px 5px #dadada;">
+                <div class="card-panel grey lighten-5 z-depth-1" style="box-shadow:0 3px 5px #dadada; padding-bottom:15px;">
                     <div class="row valign-wrapper">
                         <div class="col s9">
                             <h6 class="black-text">
@@ -52,7 +52,7 @@
                             </span> -->
                         </div>
                         <div class="col s3">
-                            <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;margin-bottom:5px">
+                            <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;margin-bottom:5px; margin-top:15px;">
                                 <h5> {{ loop.index }} </h5>
                             </div>
                             <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;">
@@ -78,7 +78,7 @@
             // Creating map options
             var mapOptions = {
                center: [{{ hotel_locations[0][2] }}, {{ hotel_locations[0][3] }}],
-               zoom: 11
+               zoom: 12
             }
             
             // Creating a map object
