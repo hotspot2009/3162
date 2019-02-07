@@ -40,9 +40,11 @@
                                 <div class="modal-content">
                                 <h4>Top Reviews</h4>
                                     {% set top = best_reviews["{}_{}".format(hotel[1].split("_")[0],search_term)] %}
-                                    <p>1) {{top[0][0]}}</p>
-                                    <p>2) {{top[1][0]}}</p>
-                                    <p>3) {{top[2][0]}}</p>
+                                        {% for review in top %}
+                                            {% if top[(loop.index-1)][0] != "" %}
+                                                <p>{{loop.index}}) {{top[(loop.index-1)][0]}}</p>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#" class="modal-close waves-effect waves-green btn-flat">Close</a>
