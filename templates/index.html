@@ -6,6 +6,8 @@
         <div class="height-adjustment"></div>
         <div class="row">
             
+                <!-- Front page logo (animation) -->
+
                 <div class="logo-slides logo-centering hotel"></div>
                 <div class="logo-slides logo-centering food"></div>
                 <div class="logo-slides logo-centering doorman"></div>
@@ -27,7 +29,10 @@
 
         <form class="col s8 offset-s2" action="/homepage" method="POST">            
             <div class="row">
-                <div class="input-field col s6">                        
+                <div class="input-field col s6">
+
+                    <!-- A dropdown menu for the list of cities --> 
+
                     <select name="input-location" class = "browser-default">
                             <option value = "" disabled selected>Select Location</option>
                             {% for key in cities.items() %}
@@ -36,6 +41,9 @@
                     </select>           
                 </div>
                 <div class="input-field col s6">
+
+                    <!-- Search bar with autocomplete feature -->
+
                     <input id="input-search-term-area" name="input-search-term" type="text" class="validate autocomplete">                    
                     <label for="input-search-term-area">Search Term</label>
                 </div>

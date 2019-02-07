@@ -8,14 +8,15 @@
         </div>
         <div class="col s6" style="height:100vh;overflow-y: scroll;overflow-x: hidden;">
             <div class="row card-panel teal lighten-2" style="margin-top:0px;border-radius:0px;box-shadow: none;">
+                    
+                    <!-- Top menu bar displaying user input search aspect and location -->
+
                     <div class="col s8 white-text">Search Term: {{ search_term }}</div>
                     <div class="col s4 white-text">Location: {{ location_area }}</div>
             </div>
 
-        <!-- <div>
-            {{ timeline }}
-        </div> -->
-        
+        <!-- Displays hotel name, hotel address, rank and normalized sentiment score -->
+
         {% for hotel in timeline %}
             <div class="col s12">
                 <div class="card-panel grey lighten-5 z-depth-1" style="box-shadow:0 3px 5px #dadada; padding-bottom:15px;">
@@ -30,10 +31,11 @@
                             </span>
                             <br/>
                             <br/>
-                            <!-- Modal Trigger -->
+
                             <a class="waves-effect waves-light btn modal-trigger" href="#{{hotel[1].split("_")[0]}}">Reviews</a>
 
-                            <!-- Modal Structure -->
+                            <!-- Displays top 3 reviews of each hotel -->
+
                             <div id="{{hotel[1].split("_")[0]}}" class="modal">
                                 <div class="modal-content">
                                 <h4>Top Reviews</h4>
@@ -46,10 +48,6 @@
                                     <a href="#" class="modal-close waves-effect waves-green btn-flat">Close</a>
                                 </div>
                             </div>
-                            <!-- <span class="grey-text darken-4">
-                                <span style="font-weight: bold">Reviews</span><br/>
-                                {{ best_reviews["{}_{}".format(hotel[1].split("_")[0],search_term)] }}
-                            </span> -->
                         </div>
                         <div class="col s3">
                             <div class="responsive-img" style="border:2px solid #c5c5c5;height: 60px; width: 80px;text-align: center;margin-bottom:5px; margin-top:15px;">
