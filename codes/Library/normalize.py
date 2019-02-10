@@ -6,7 +6,7 @@ def normalize_data(search, location, timeline):
 
     collection = []
     for key, value in timeline_dict.items():
-        if count == 4:
+        if count == 128:
             break
         else:
             if location in timeline_dict[key]:

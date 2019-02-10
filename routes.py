@@ -41,7 +41,8 @@ def homepage():
     if request.method == "POST":
         input_search_term = (request.form.get("input-search-term")).lower()
         input_location = request.form.get("input-location")
-        data = normalize_data(input_search_term, input_location, timeline_dict) 
+        data = normalize_data(input_search_term, input_location, timeline_dict)
+        data = data[:20]
         if data == []:
                 return render_template('error.html')
         else:
